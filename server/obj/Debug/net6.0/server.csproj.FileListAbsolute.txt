@@ -1,0 +1,15 @@
+/home/kautsar/Documents/wppq-learn/chatting-app/server/bin/Debug/net6.0/server
+/home/kautsar/Documents/wppq-learn/chatting-app/server/bin/Debug/net6.0/server.deps.json
+/home/kautsar/Documents/wppq-learn/chatting-app/server/bin/Debug/net6.0/server.runtimeconfig.json
+/home/kautsar/Documents/wppq-learn/chatting-app/server/bin/Debug/net6.0/server.dll
+/home/kautsar/Documents/wppq-learn/chatting-app/server/bin/Debug/net6.0/ref/server.dll
+/home/kautsar/Documents/wppq-learn/chatting-app/server/bin/Debug/net6.0/server.pdb
+/home/kautsar/Documents/wppq-learn/chatting-app/server/obj/Debug/net6.0/server.csproj.AssemblyReference.cache
+/home/kautsar/Documents/wppq-learn/chatting-app/server/obj/Debug/net6.0/server.GeneratedMSBuildEditorConfig.editorconfig
+/home/kautsar/Documents/wppq-learn/chatting-app/server/obj/Debug/net6.0/server.AssemblyInfoInputs.cache
+/home/kautsar/Documents/wppq-learn/chatting-app/server/obj/Debug/net6.0/server.AssemblyInfo.cs
+/home/kautsar/Documents/wppq-learn/chatting-app/server/obj/Debug/net6.0/server.csproj.CoreCompileInputs.cache
+/home/kautsar/Documents/wppq-learn/chatting-app/server/obj/Debug/net6.0/server.dll
+/home/kautsar/Documents/wppq-learn/chatting-app/server/obj/Debug/net6.0/ref/server.dll
+/home/kautsar/Documents/wppq-learn/chatting-app/server/obj/Debug/net6.0/server.pdb
+/home/kautsar/Documents/wppq-learn/chatting-app/server/obj/Debug/net6.0/server.genruntimeconfig.cache
