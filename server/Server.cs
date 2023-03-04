@@ -6,21 +6,13 @@ namespace Server
 {
     class Server
     {
-
         public Thread thread { get; private set; }
-
         public bool IsServerActive { get; private set; }
-
         public int UserIdCounter { get; set; }
-
         public int Port = 3000;
-
         public Socket ListeningSocket { get; private set; }
-
         public List<Client> LstClients { get; private set; }
-
         public IPEndPoint EndPoint { get; private set; }
-
         public static bool IsSocketConnected(Socket s)
         {
             if (!s.Connected)
@@ -32,7 +24,6 @@ namespace Server
 
             return true;
         }
-
         public Server()
         {
             Port = 3000;
@@ -40,7 +31,6 @@ namespace Server
             IsServerActive = false;
             LstClients = new List<Client>();
         }
-
         private bool SendMessage(Client client, string msg)
         {
             try
@@ -56,7 +46,6 @@ namespace Server
             }
             return false;
         }
-
         private void WaitConnections()
         {
             while (IsServerActive)
@@ -81,7 +70,6 @@ namespace Server
                 }
             }
         }
-
         public void ProcessMessaging(Client client)
         {
             try
@@ -128,14 +116,15 @@ namespace Server
                 }
             }
         }
-
         public void Start()
         {
+               
             while (true)
             {
                 if (IsServerActive) return;
                 ListeningSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
                 EndPoint = new IPEndPoint(IPAddress.Any, Port);
+                Console.WriteLine(EndPoint);
                 ListeningSocket.Bind(EndPoint);
                 ListeningSocket.Listen(5);
                 Console.WriteLine("Server was started.\nWait for connections...");
