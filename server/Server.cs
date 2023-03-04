@@ -118,11 +118,13 @@ namespace Server
         }
         public void Start()
         {
+               
             while (true)
             {
                 if (IsServerActive) return;
                 ListeningSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
                 EndPoint = new IPEndPoint(IPAddress.Any, Port);
+                Console.WriteLine(EndPoint);
                 ListeningSocket.Bind(EndPoint);
                 ListeningSocket.Listen(5);
                 Console.WriteLine("Server was started.\nWait for connections...");

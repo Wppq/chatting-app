@@ -1,5 +1,5 @@
-using System.Net.Socket;
 using System.Text;
+using System.Net.Sockets;
 
 namespace ClientConsole
 {
