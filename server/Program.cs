@@ -1,30 +1,12 @@
-﻿using System.Net;
-using System.Net.Sockets;
-
-namespace Chat_App 
+﻿namespace Server
 {
-    public class Program 
+    class Program
     {
-        private static List<Socket> clients = new List<Socket>();
-        private static TcpListener tcpListener = new TcpListener(IPAddress.Parse("localhost"),8080);
-        public static void Main()
+        static void Main()
         {
-            tcpListener.Start();
-            while(true)
-            {
-                Socket client = tcpListener.AcceptSocket();
-                if(client.Connected)
-                {
-                    clients.Add(client);
-                    Thread newThread = new Thread(() => Listeners(client));
-                    newThread.Start();
-                }
-            }
-        }
-
-        public static void Listeners(Socket client)
-        {
-            Console.WriteLine("Client : " + client.RemoteEndPoint + "now connected");
+            Server my_server;
+            my_server = new Server();
+            my_server.Start();
         }
     }
 }
