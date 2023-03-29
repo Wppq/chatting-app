@@ -48,6 +48,7 @@ namespace Server
         }
         private void WaitConnections()
         {
+
             while (IsServerActive)
             {
                 Client client = new Client
@@ -58,11 +59,21 @@ namespace Server
                 try
                 {
                     client.Socket = ListeningSocket.Accept();
-                    client.thread = new Thread(() => ProcessMessaging(client)); //?????????
-                    Console.WriteLine("{0} connected.", client.Username);
-                    UserIdCounter += 1;
-                    LstClients.Add(client);
-                    client.thread.Start();
+                    Console.WriteLine("If you want to accept this user ?" + client.Socket.RemoteEndPoint + "(y/n)");
+                    string val = Console.ReadLine();
+                    if (val == "n")
+                    {
+                        client.Socket.Send(Encoding.Unicode.GetBytes("You are not have access"));
+                        client.Socket.Close();
+                    }
+                    else
+                    {
+                        client.thread = new Thread(() => ProcessMessaging(client)); //?????????
+                        Console.WriteLine("{0} connected.", client.Username);
+                        UserIdCounter += 1;
+                        LstClients.Add(client);
+                        client.thread.Start();
+                    }
                 }
                 catch (Exception)
                 {
@@ -70,11 +81,12 @@ namespace Server
                 }
             }
         }
+
         public void ProcessMessaging(Client client)
         {
             try
             {
-                SendMessage(client, "Welcome to chat app");
+                SendMessage(client, "");
             }
             catch
             {
@@ -118,7 +130,7 @@ namespace Server
         }
         public void Start()
         {
-               
+
             while (true)
             {
                 if (IsServerActive) return;
